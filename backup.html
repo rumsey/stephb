@@ -1,0 +1,407 @@
+
+<!doctype html>
+<html lang="en">
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Stephanie Birmingham | stephb.me</title>
+
+		<meta name="description" content="This is the personal website of Stephanie Birmingham." />
+		<meta name="keywords" content="Stephanie, Birmingham" />
+		<meta name="author" content="Stephanie Birmingham" />
+		<meta name="robots" content="index, follow" />
+
+		<meta property="og:title" content="stephb.me">
+		<meta property="og:description" content="This is the personal website of Stephanie Birmingham.">
+
+<!-- 
+		<meta property="og:image" content="http://work.rumz.org/_includes/social/facebook.png">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta property="og:url" content="http://stephb.me">
+ -->
+
+		<meta name="twitter:title" content="stephb.me">
+		<meta name="twitter:description" content="This is the personal website of Stephanie Birmingham.">
+
+<!-- 
+		<meta name="twitter:image" content="http://work.rumz.org/_includes/social/twitter.png">
+		<meta name="twitter:card" content="summary_large_image">
+ -->
+
+		<!-- <link rel="stylesheet" href="http://work.rumz.org/_includes/css/reset.css"> -->
+		<!--     <link rel="stylesheet/less" type="text/css" href="css/styles-workonly.less" /> -->
+
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+		<style type="text/css">
+
+			:root {
+				--key: rgba(0,0,0,0.7);
+				/*--bkg: rgba(239,239,239,1);*/
+				--bkg: rgba(255,255,255,1);
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: 'Test Untitled Sans', 'TestUntitledSans-Regular';
+				color: var(--key);
+				background-color: var(--bkg);
+			}
+
+			.letter {
+				/*width: calc(100vw - 50px);*/
+				/*height: calc(100vh - 50px);*/
+				height: 100vh;
+				padding: 25px;
+				box-sizing: border-box;
+				/*margin: 25px auto auto auto;*/
+				margin: auto;
+				position: relative;
+				z-index: 1;
+				transition: background-color 0.3s ease-out
+				/*background-color: rgba(255, 0, 0, 0.15);*/
+			}
+
+
+			.letter.show,
+			.letter.showtwo {
+				/*background-color: var(--bkg);*/
+			}
+
+
+			h1, h5, h6 {
+				font-weight: normal;
+				/*font: normal 2.0rem/calc(20 / 16) Georgia, serif;*/
+				margin: 0;
+			}
+			h5, h6 {
+				font-size: 1.0rem;
+				line-height: calc(20 / 16);
+				/*margin-bottom: 1.0rem;*/
+/*
+				position: absolute;
+				bottom: 0;
+				left: 0;
+*/
+			}
+			h5 strong {
+				/*font-weight: 600;*/
+				font-weight: normal;
+				position: relative;
+			}
+			@keyframes highlight {
+				0% {
+					width: 0;
+				}
+				100% {
+					width: calc(100% + 6px);
+				}
+			}
+			h5 strong:after {
+				content: "";
+				position: absolute;
+				top: -3px;
+				left: -3px;
+				/*width: calc(100% + 6px);*/
+				width: 0;
+				height: calc(100% + 6px);
+				/*background-color: green;*/
+				background-image: url('stroke.png');
+				background-size: cover;
+				z-index: -1;
+				animation: 0.3s highlight 1.5s ease-out 1;
+				animation-fill-mode: forwards;
+			}
+
+			h5 + h5 {
+				text-indent: 60px;
+			}
+			
+			h5 a,
+			ul li a {
+				color: var(--key);
+				text-decoration: underline;
+				text-decoration-thickness: 1px;
+				text-underline-offset: 0.125rem;
+			}
+			h5 span,
+			h5 .footnotetrigger,
+			h5 .footnotetriggertwo {
+				transition: color 0.3s ease-out
+			}
+
+			.letter.show h5 span,
+			.letter.show h5 .footnotetriggertwo,
+			.letter.showtwo h5 span,
+			.letter.showtwo h5 .footnotetrigger {
+				/*filter: blur(25px);*/
+				opacity: 0.35;
+				color: #efefef;
+			}
+
+			.footnotetrigger,
+			.footnotetriggertwo {
+				position: relative;
+			}
+
+			.letter.show .footnotetrigger,
+			.letter.showtwo .footnotetriggertwo {
+				text-decoration: none;
+				background-color: white;
+				padding: 1px 0 1px 0;
+				box-shadow: 
+					-5px 0 0 #ffffff,
+					5px 0 0 #ffffff;
+			}
+
+			.footnotetrigger small,
+			.footnotetriggertwo small {
+				text-indent: 0;
+				hyphens: auto;
+				pointer-events: none;
+				opacity: 0;
+				position: absolute;
+				min-width: 100px;
+				display: block;
+				width: 100%;
+				padding: 5px;
+				background-color: white;
+/*
+				top: 100%;
+				right: 0;
+*/
+
+				top: 100%;
+				left: 0;
+
+				z-index: 9;
+
+				/*transition: all 0.5s ease-out;*/
+				/*transition-delay: 0s;*/
+			}
+
+			.letter.show .footnotetrigger small,
+			.letter.showtwo .footnotetriggertwo small {
+				opacity: 1;
+				filter: blur(0);
+				/*transition-delay: 0.3s;*/
+			}
+/*
+			.footnote {
+				pointer-events: none;
+				position: absolute;
+				z-index: 2;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				background-color: rgba(255, 255, 255, 0.35);
+				backdrop-filter: blur(10px);
+			}
+
+			.footnote.show {
+				opacity: 1;
+			}
+*/
+
+
+			.errata {
+				border-top: 1px rgba(0,0,0,0.1) solid;
+				margin-top: 1.5rem;
+				padding-block: 1.5rem;
+
+			}
+			h6 {
+				/*font-weight: 600;*/
+/*
+				font-size: 0.7rem;
+				line-height: calc(15 / 10);
+				font-weight: 500;
+*/
+
+				font-size: 0.7rem;
+				line-height: calc(20 / 16);
+				font-weight: 500;
+
+				margin-bottom: 1rem;
+				text-indent: 60px;
+			}
+
+			ul, 
+			ul li {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+			ul li {
+				display: flex;
+				margin-bottom: 1rem;
+			}
+
+			ul li small,
+			ul li p {
+
+				font-size: 0.7rem;
+				/*line-height: calc(15 / 10);*/
+				line-height: calc(20 / 16);
+				font-weight: 500;
+
+/*				font-size: 1.0rem;
+				line-height: calc(20 / 16);
+*/
+
+				margin: 0;
+			}
+			ul li small {
+				min-width: 60px;
+			}
+
+			@media (min-width: 1024px) {
+				.letter {
+					padding-top: 10vh;
+					width: calc(100% - 120px);
+					margin-inline: auto auto;
+					height: auto;
+				}
+				h5,
+				h6 {
+					font-size: 2.0rem;
+					/*line-height: calc(20 / 16);*/
+					/*margin-bottom: 1.0rem;*/
+				}
+				h5 + h5,
+				h6 {
+					text-indent: 120px;
+				}
+
+				.errata {
+					/*width: calc(100% - 120px);*/
+					/*margin-inline: auto auto;*/
+					margin-top: 2rem;
+					padding-block: 2rem;
+					padding-bottom: 10vh;
+				}
+				h6,
+				ul li small,
+				ul li p {
+					font-size: 1rem;
+					line-height: calc(20 / 16);
+					/*font-weight: 400;*/
+				}
+				ul li small {
+					min-width: 120px;
+				}
+			}
+
+		</style>
+
+
+		<!-- <script src="script.js"></script> -->
+
+	</head>
+	<body>
+
+
+		<div>
+
+			<h1>Stephanie Birmingham</h1>
+
+			<div class="letter">
+
+
+				<h6>About</h6>
+
+				<h5><span><strong>Stephanie Birmingham</strong> is a creative doer dedicated to making New York a more equitable place for workers. She has over a decade of experience in creating and growing infrastructure at the city’s nonprofits.</span></h5>
+
+				<h5><span>Presently, she serves as the Director of Community and Operations at New York City Employment and Training Coalition, the city’s largest and oldest workforce development coalition. Prior to this, she was the Senior Membership Manager at the Whitney Museum of American Art, where she oversaw development for a high-performing membership sales team.</span></h5>
+
+				<h5><span>Recently, was a guest on various podcasts and panels, including the NYC Workforce Drop and the Grace Institute’s Moving Women Forward Conference.</span></h5>
+
+				<h5><span>Additionally, her background is in studio art, community supported agriculture and teaching.</span></h5>
+
+				<h5><span>You may contact her via email.</span></h5>
+
+<!-- 
+				<h5><span>Stephanie Birmingham is a creative doer dedicated to making New York a more equitable place for workers. She has over a decade of experience in creating and growing infrastructure at the city’s nonprofits.</span></h5>
+
+				<h5><span>Presently, she serves as the tkDirector of Communications at </span><a id="togglefootnote" class="footnotetrigger">New York City Employment and Training Coalition<small>tk this is the city’s largest and oldest workforce development coalition, founded in tkyear.</small></a><span>, the city’s largest and oldest workforce development coalition. Prior to this, she was the tk at the </span><a id="togglefootnotetwo" class="footnotetriggertwo">Whitney Museum of American Art<small>tk somethign about the Whitney goes here.</small></a><span>, where she oversaw development for a high-performing membership sales team.</span></h5>
+
+				<h5><span>Recently, was a guest on various podcasts and panels, including the NYC Workforce Drop and The Grace Institute’s Moving Women Forward Conference.</span></h5>
+
+				<h5><span>Additionally, her background is in studio art, community supported agriculture and tk something else here.</span></h5>
+
+				<h5><span>You may contact her via email.</span></h5>
+ -->
+
+			</div>
+
+				<div class="errata">
+					<h6>Select Podcasts & Panels</h6>
+					<ul>
+						<li>
+							<small>12.2025</small>
+							<p>The NYC Workforce Drop <a href="https://nycetc.org/podcast/reflection-future-direction-insights-from-the-2025-nycetc-conference/">Reflection & Future Direction: Insights from the 2025 NYCETC Conference</a></p>
+						</li>
+						<li>
+							<small>10.2025</small>
+							<p>The NYC Workforce Drop <a href="https://nycetc.org/podcast/mini-episode-accessibility-at-the-2025-nycetc-conference-with-stephanie-birmingham/">Accessibility at the 2025 NYCETC Conference with Stephanie Birmingham</a></p>
+						</li>
+						<li>
+							<small>06.2025</small>
+							<p>The Grace Institute’s Moving Women Forward Conference <a href="https://mailchi.mp/nycetc.org/leaders-convene-to-explore-whats-next-for-women-in-the-workforce-17990441">Jump-Starting Social Mobility for Women in the Workforce panel</a></p>
+						</li>
+					</ul>
+
+				</div>
+
+
+<!-- 
+			<div class="footnote">
+			Foo
+			</div>
+ -->
+		</div>
+
+
+<!-- 
+			<h1>Stephanie Birmingham</h1>
+			<h5>Get in touch with me at <a href="mailto:stephanierbirmingham@gmail.com" target="_top">stephanierbirmingham@gmail.com</a>.</h5>
+		</div>
+ -->
+
+
+
+<script>
+
+
+document.getElementById('togglefootnote').onclick = function(){
+  document.getElementsByClassName('letter')[0].classList.toggle("show");
+}
+
+document.getElementById('togglefootnotetwo').onclick = function(){
+  document.getElementsByClassName('letter')[0].classList.toggle("showtwo");
+}
+
+
+
+
+</script>
+
+
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
