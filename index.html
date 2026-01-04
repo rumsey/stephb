@@ -39,8 +39,10 @@
 		<style type="text/css">
 
 			:root {
+				font-size: 20px;
 				--key: rgba(0,0,0,0.7);
 				--bkg: rgba(255,255,255,1);
+				--indent: 75px;
 			}
 
 			@font-face {
@@ -97,7 +99,7 @@
 			h1, h2, h5, h6, small, ul li p {
 				font-weight: normal;
 				font-size: 1.0rem;
-				line-height: calc(20 / 16);
+				line-height: calc(25 / 18);
 				margin: 0;
 				margin-bottom: 1rem;
 			}
@@ -105,8 +107,11 @@
 			h5 {
 				margin-bottom: 0;
 			}
+			h5 strong {
+				font-weight: 500;
+			}
 			h5 + h5 {
-				text-indent: 60px;
+				text-indent: var(--indent);
 			}
 
 			h5 a,
@@ -148,10 +153,7 @@
 				margin: 0;
 			}
 			ul li small {
-				min-width: 60px;
-			}
-			ul li p a {
-				display: block;
+				min-width: var(--indent);
 			}
 
 
@@ -240,5 +242,18 @@
 
 		</div>
 
+
+
+
+
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
