@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 	<head>
 
 		<meta charset="UTF-8">
@@ -38,36 +38,205 @@
 
 		<style type="text/css">
 
+			:root {
+				--key: rgba(0,0,0,0.7);
+				--bkg: rgba(255,255,255,1);
+			}
+
+			@font-face {
+			   font-family: 'Untitled Sans';
+			   src: url('fonts/untitled-sans-regular.woff2') format('woff2');
+			   font-weight: normal;
+			   font-style: normal;
+			}
+			 
+			@font-face {
+			   font-family: 'Untitled Sans';
+			   src: url('fonts/untitled-sans-regular-italic.woff2') format('woff2');
+			   font-weight: normal;
+			   font-style: italic;
+			}
+
+			@font-face {
+			   font-family: 'Untitled Sans';
+			   src: url('fonts/untitled-sans-medium.woff2') format('woff2');
+			   font-weight: 500;
+			   font-style: normal;
+			}
+			 
+			@font-face {
+			   font-family: 'Untitled Sans';
+			   src: url('fonts/untitled-sans-medium-italic.woff2') format('woff2');
+			   font-weight: 500;
+			   font-style: italic;
+			}
+
+			@font-face {
+			   font-family: 'Untitled Sans';
+			   src: url('fonts/untitled-sans-bold.woff2') format('woff2');
+			   font-weight: 700;
+			   font-style: normal;
+			}
+			 
+			@font-face {
+			   font-family: 'Untitled Sans';
+			   src: url('fonts/untitled-sans-bold-italic.woff2') format('woff2');
+			   font-weight: 700;
+			   font-style: italic;
+			}
+
 			body {
 				margin: 0;
 				padding: 0;
+				font-family: 'Untitled Sans', sans-serif;
+				color: var(--key);
+				background-color: var(--bkg);
+				padding: 25px;
 			}
-			div {
-				width: calc(100vw - 50px);
-				height: calc(100vh - 50px);
-				margin: 25px auto auto auto;
-				position: relative;
-			}
-			h1, h5 {
-				font: normal 2.0rem/calc(20 / 16) Georgia, serif;
-				margin: 0;
-			}
-			h5 {
+
+			h1, h2, h5, h6, small, ul li p {
+				font-weight: normal;
 				font-size: 1.0rem;
 				line-height: calc(20 / 16);
-				position: absolute;
-				bottom: 0;
-				left: 0;
+				margin: 0;
+				margin-bottom: 1rem;
+			}
+
+			h5 {
+				margin-bottom: 0;
+			}
+			h5 + h5 {
+				text-indent: 60px;
+			}
+
+			h5 a,
+			ul li a {
+				color: var(--key);
+				text-decoration: underline;
+				text-decoration-thickness: 1px;
+				text-underline-offset: 0.125rem;
+			}
+
+			.errata {
+				border-top: 1px rgba(0,0,0,0.1) solid;
+				margin-top: 1.5rem;
+				padding-block: 1.5rem;
+
+			}
+
+			ul, 
+			ul li {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+			ul li {
+				display: flex;
+				margin-bottom: 1rem;
+			}
+
+			h2,
+			ul li small,
+			ul li p {
+				font-size: 0.7rem;
+				line-height: calc(20 / 16);
+				font-weight: 500;
+			}
+
+			ul li small,
+			ul li p {
+				margin: 0;
+			}
+			ul li small {
+				min-width: 60px;
+			}
+			ul li p a {
+				display: block;
+			}
+
+
+
+			@media (min-width: 1024px) {
+				.letter {
+					padding-top: 10vh;
+					width: calc(100% - 120px);
+					margin-inline: auto auto;
+				}
+				h5,
+				h6 {
+					font-size: 2.0rem;
+				}
+				h5 + h5,
+				h6 {
+					text-indent: 120px;
+				}
+
+				.errata {
+					width: calc(100% - 120px);
+					margin-inline: auto auto;
+					margin-top: 2rem;
+					padding-block: 2rem;
+					padding-bottom: 10vh;
+				}
+				h2,
+				ul li small,
+				ul li p {
+					font-size: 1rem;
+					line-height: calc(20 / 16);
+				}
+				ul li small {
+					min-width: 120px;
+				}
+
 			}
 
 		</style>
 
 
+
 	</head>
 	<body>
+
+
 		<div>
-			<h1>Stephanie Birmingham</h1>
-			<h5>Get in touch with me at <a href="mailto:stephanierbirmingham@gmail.com" target="_top">stephanierbirmingham@gmail.com</a>.</h5>
+
+
+			<div class="letter">
+
+				<div>
+					<h5><span><strong>Stephanie Birmingham</strong> is a creative doer dedicated to making New York a more equitable place for workers. She has over a decade of experience in creating and growing infrastructure at the city’s nonprofits.</span></h5>
+
+					<h5><span>Presently, she serves as the Director of Community and Operations at New York City Employment and Training Coalition, the city’s largest and oldest workforce development coalition. Prior to this, she was the Senior Membership Manager at the Whitney Museum of American Art, where she oversaw development for a high-performing membership sales team.</span></h5>
+
+					<h5><span>Recently, was a guest on various podcasts and panels, including the NYC Workforce Drop and the Grace Institute’s Moving Women Forward Conference.</span></h5>
+
+					<h5><span>Additionally, her background is in studio art, community supported agriculture and teaching.</span></h5>
+
+					<h5><span>You may contact her <a href="mailto:stephanierbirmingham@gmail.com" target="_top">via email</a>.</span></h5>
+				</div>
+
+			</div>
+
+				<div class="errata">
+					<h2>Select Podcasts & Panels</h2>
+					<ul>
+						<li>
+							<small>12.2025</small>
+							<p>The NYC Workforce Drop <a href="https://nycetc.org/podcast/reflection-future-direction-insights-from-the-2025-nycetc-conference/">Reflection & Future Direction: Insights from the 2025 NYCETC Conference</a></p>
+						</li>
+						<li>
+							<small>10.2025</small>
+							<p>The NYC Workforce Drop <a href="https://nycetc.org/podcast/mini-episode-accessibility-at-the-2025-nycetc-conference-with-stephanie-birmingham/">Accessibility at the 2025 NYCETC Conference with Stephanie Birmingham</a></p>
+						</li>
+						<li>
+							<small>06.2025</small>
+							<p>The Grace Institute’s Moving Women Forward Conference <a href="https://mailchi.mp/nycetc.org/leaders-convene-to-explore-whats-next-for-women-in-the-workforce-17990441">Jump-Starting Social Mobility for Women in the Workforce panel</a></p>
+						</li>
+					</ul>
+
+				</div>
+
 		</div>
+
 	</body>
 </html>
