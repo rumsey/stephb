@@ -93,7 +93,7 @@
 				font-family: 'Untitled Sans', sans-serif;
 				color: var(--key);
 				background-color: var(--bkg);
-				padding: 25px;
+				/*padding: 25px;*/
 			}
 
 			h1, h2, h5, h6, small, ul li p {
@@ -121,14 +121,22 @@
 				text-decoration-thickness: 1px;
 				text-underline-offset: 0.125rem;
 			}
+
+			.cover img {
+				width: 100%;
+			}
+
 			.letter {
-				padding-top: 35vh;
+				padding: 25px 25px 0 25px;
+				box-sizing: border-box;
+
 			}
 			.errata {
 				border-top: 1px rgba(0,0,0,0.1) solid;
 				margin-top: 1.5rem;
-				padding-block: 1.5rem;
-
+				margin-inline: 25px 25px;
+				padding-block: 1.5rem 1.5rem;
+				box-sizing: border-box;
 			}
 
 			ul, 
@@ -161,28 +169,53 @@
 
 
 			@media (min-width: 1024px) {
-				.letter {
-					max-width: 1020px;
-					padding-top: 25vh;
-					width: calc(100% - 120px);
-					margin-inline: auto auto;
-				}
 				h5,
 				h6 {
-					font-size: 2.0rem;
+					font-size: 1.4rem;
 				}
 				h5 + h5,
 				h6 {
 					text-indent: 120px;
 				}
 
+				body {
+					position: relative;
+				}
+				.cover {
+					position: fixed;
+					height: 100vh;
+					width: 50vw;
+					box-sizing: border-box;
+					overflow: hidden;
+				}
+				.cover img {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					/*display: none;*/
+				}
+				.page {
+					margin-left: auto;
+					width: 50vw;
+				}
+				.letter {
+					padding: 7.5vh 0 0 0;
+
+					width: calc(100% - 10vw);
+					margin-inline: auto auto;
+				}
 				.errata {
+					width: calc(100% - 10vw);
+					margin-inline: auto auto;
+/*
 					max-width: 1020px;
 					width: calc(100% - 120px);
 					margin-inline: auto auto;
 					margin-top: 2rem;
 					padding-block: 2rem;
 					padding-bottom: 10vh;
+*/
 				}
 				h2,
 				ul li small,
@@ -203,9 +236,11 @@
 	</head>
 	<body>
 
+		<section class="cover">
+			<img src="speaking.png">
+		</section>
 
-		<div>
-
+		<section class="page">
 
 			<div class="letter">
 
@@ -223,38 +258,28 @@
 
 			</div>
 
-				<div class="errata">
-					<h2>Select Podcasts & Panels</h2>
-					<ul>
-						<li>
-							<small>12.2025</small>
-							<p>The NYC Workforce Drop <a href="https://nycetc.org/podcast/reflection-future-direction-insights-from-the-2025-nycetc-conference/">Reflection & Future Direction: Insights from the 2025 NYCETC Conference</a></p>
-						</li>
-						<li>
-							<small>10.2025</small>
-							<p>The NYC Workforce Drop <a href="https://nycetc.org/podcast/mini-episode-accessibility-at-the-2025-nycetc-conference-with-stephanie-birmingham/">Accessibility at the 2025 NYCETC Conference with Stephanie Birmingham</a></p>
-						</li>
-						<li>
-							<small>06.2025</small>
-							<p>The Grace Institute’s Moving Women Forward Conference <a href="https://mailchi.mp/nycetc.org/leaders-convene-to-explore-whats-next-for-women-in-the-workforce-17990441">Jump-Starting Social Mobility for Women in the Workforce panel</a></p>
-						</li>
-					</ul>
+			<div class="errata">
+				<h2>Select Podcasts & Panels</h2>
+				<ul>
+					<li>
+						<small>12.2025</small>
+						<p>The NYC Workforce Drop <a href="https://open.spotify.com/episode/56SI7GrzUlsZbVmFmNz3Lw">Reflection & Future Direction: Insights from the 2025 NYCETC Conference</a></p>
+					</li>
+					<li>
+						<small>10.2025</small>
+						<p>The NYC Workforce Drop <a href="https://open.spotify.com/episode/5atfkJFHGhr040m5X9bQqv">Accessibility at the 2025 NYCETC Conference with Stephanie Birmingham</a></p>
+					</li>
+					<li>
+						<small>06.2025</small>
+						<p>The Grace Institute’s Moving Women Forward Conference <a href="https://mailchi.mp/nycetc.org/leaders-convene-to-explore-whats-next-for-women-in-the-workforce-17990441">Jump-Starting Social Mobility for Women in the Workforce panel</a></p>
+					</li>
+				</ul>
 
-				</div>
-
-		</div>
-
-
-
-
+			</div>
+		</section>
 
 	</body>
 </html>
-
-
-
-
-
 
 
 
